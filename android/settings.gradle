@@ -1,0 +1,8 @@
+settings.gradle.kts
+
+include(":app")
+
+// Flutter Engine
+val flutterRoot: String by settings
+include(":flutter")
+project(":flutter").projectDir = File(flutterRoot + "/packages/flutter_tools/gradle/app")
