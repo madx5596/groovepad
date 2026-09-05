@@ -1,10 +1,21 @@
 include ':app'
 
-// Flutter Engine
-def flutterRoot = rootProject.projectDir.parentFile.absolutePath + '/flutter'
-def flutterToolsDir = new File(flutterRoot, 'packages/flutter_tools')
+def localPropertiesFile = new File(rootProject.projectDir, 'local.properties')
+def properties = new Properties()
 
-if (flutterToolsDir.exists()) {
-    include ':flutter'
-    project(':flutter').projectDir = new File(flutterToolsDir, 'gradle/app')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        properties.load(reader)
+    }
 }
+
+def flutterSdkPath = properties.getProperty('flutter.sdk')
+if (flutterSdkPath == null) {
+    throw new GradleException("flutter.sdk not found in local.properties")
+}
+
+def flutterRoot = flutterSdkPath
+assert new File("${flutterRoot}/packages/flutter_tools/gradle").exists()
+
+include ':flutter'
+project(':flutter').projectDir = new File("${flutterRoot}/packages/flutter_tools/gradle")
