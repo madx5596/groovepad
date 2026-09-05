@@ -1,8 +1,10 @@
-settings.gradle.kts
-
-include(":app")
+include ':app'
 
 // Flutter Engine
-val flutterRoot: String by settings
-include(":flutter")
-project(":flutter").projectDir = File(flutterRoot + "/packages/flutter_tools/gradle/app")
+def flutterRoot = rootProject.projectDir.parentFile.absolutePath + '/flutter'
+def flutterToolsDir = new File(flutterRoot, 'packages/flutter_tools')
+
+if (flutterToolsDir.exists()) {
+    include ':flutter'
+    project(':flutter').projectDir = new File(flutterToolsDir, 'gradle/app')
+}
