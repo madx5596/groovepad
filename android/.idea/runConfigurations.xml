@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RunConfigurationProducerService">
+    <option name="ignoredProducers">
+      <set>
+        <option value="com.android.tools.idea.compose.preview.runconfiguration.ComposePreviewRunConfigurationProducer" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="false" name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="DEPLOY_FROM_SOURCE" value="true" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <method v="2" />
+      <option name="Android.Gradle.BeforeRunTasks">
+        <map>
+          <entry key="app">
+            <value>
+              <set>
+                <option value="gradle.Gradle_Tasks_Build" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+    </configuration>
+    <configuration default="true" name="Android App" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="groovepad.app" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="DEPLOY_FROM_SOURCE" value="true" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DEFAULT_ACTIVITY_CHOICE" value="myActivity" />
+      <option name="SHOW_DIALOG" value="false" />
+      <option name="SKIP_INSTALLATION" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <method v="2">
+        <option name="RunPython" enabled="false" />
+      </method>
+    </configuration>
+  </component>
+</project>
